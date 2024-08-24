@@ -6,4 +6,4 @@ Kelompok Trashure
 Ketua Kelompok:  
 Anggota 1: Rama Sulaiman Nurcahyo - 22/492727/TK/53940  
 Anggota 2: Daniel Anantadhirya Adyawisesa Linan - 22/492989/TK/53975  
-Anggota 3:   
+Anggota 3: Christella Jesslyn Dewantara - 22/493149/TK/54003
