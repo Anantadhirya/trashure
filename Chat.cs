@@ -23,7 +23,7 @@ namespace trashure
             _timeSent = time;
         }
 
-        publid addMessage(string message)
+        public addMessage(string message)
         {
             _message = message;
         }
