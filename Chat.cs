@@ -23,7 +23,7 @@ namespace trashure
             _timeSent = time;
         }
 
-        public addMessage(string message)
+        public void addMessage(string message)
         {
             _message = message;
         }
