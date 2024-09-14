@@ -10,3 +10,6 @@ Anggota 3: Christella Jesslyn Dewantara - 22/493149/TK/54003
 
 ## Class Diagram
 ![class_diagram](https://github.com/user-attachments/assets/1f198922-19b2-4d36-8cf9-46f74c4f2931)
+
+## ERD
+![ERD drawio](https://github.com/user-attachments/assets/0f1af291-1d49-4fe9-8902-bb4e61c94e60)
