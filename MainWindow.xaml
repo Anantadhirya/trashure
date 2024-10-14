@@ -16,7 +16,7 @@
         </Grid>
         <Grid Grid.Column="1">
             <StackPanel Orientation="Vertical" Margin="20">
-                <TextBlock Text="Login" FontSize="25" HorizontalAlignment="Center" Margin="0,25" VerticalAlignment="Top" FontWeight="Bold" Padding="10" />
+                <TextBlock Text="Sign In" FontSize="25" HorizontalAlignment="Center" Margin="0,25" VerticalAlignment="Top" FontWeight="Bold" Padding="10" />
                 <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*"/>
@@ -29,19 +29,19 @@
                     <TextBlock Text="Password" Grid.Row="2" Margin="0,15" HorizontalAlignment="Left"/>
                     <PasswordBox Grid.Row="3" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left"/>
                 </Grid>
-                <Button x:Name="LoginBtn" Content="Login" Foreground="White" Background="Black" Margin="0,25" Height="35" Width="250">
+                <Button x:Name="SignInBtn" Content="Sign In" Foreground="White" Background="Black" Margin="0,25" Height="35" Width="250">
                     <Button.Style>
                         <Style TargetType="Button">
                             <Setter Property="Template">
                                 <Setter.Value>
                                     <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border x:Name="LoginBorder" Background="#32AC90" CornerRadius="16">
+                                        <Border x:Name="SignInBorder" Background="#32AC90" CornerRadius="16">
                                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                         </Border>
                                         <ControlTemplate.Triggers>
                                             <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="AliceBlue" TargetName="LoginBorder"  />
-                                                <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="LoginBorder" />
+                                                <Setter Property="Background" Value="AliceBlue" TargetName="SignInBorder"  />
+                                                <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="SignInBorder" />
                                             </Trigger>
                                         </ControlTemplate.Triggers>
                                     </ControlTemplate>
