@@ -36,7 +36,7 @@
                     <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
                     <Button x:Name="SignUpBtn" Style="{StaticResource DefaultButton}" Content="Sign Up" Margin="0,20,0,10" Height="35" Width="200" MouseDown="signupbutton_onClick"/>
                     <TextBlock Text="Already a member?" FontFamily="{StaticResource Default}" Margin="0,5" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Sign In" FontFamily="{StaticResource Default}" Margin="0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center" MouseDown="signin_onClick" Cursor="Hand"/>
+                    <TextBlock Text="Sign In" FontFamily="{StaticResource Default}" Margin="0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center" MouseDown="onSignIn" Cursor="Hand"/>
                 </StackPanel>
             </Grid>
         </Viewbox>

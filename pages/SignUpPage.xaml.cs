@@ -21,17 +21,21 @@ namespace trashure.pages
     /// </summary>
     public partial class SignUpPage : Page
     {
-        public SignUpPage()
+        Action<MainWindow.Navigation> Navigate;
+        public SignUpPage(Action<MainWindow.Navigation> Navigate)
         {
             InitializeComponent();
+            this.Navigate = Navigate;
         }
 
         private void signupbutton_onClick(object sender, MouseButtonEventArgs e)
         {
+
         }
 
-        private void signin_onClick(object sender, MouseButtonEventArgs e)
+        private void onSignIn(object sender, MouseButtonEventArgs e)
         {
+            Navigate(Navigation.signin);
         }
     }
 }

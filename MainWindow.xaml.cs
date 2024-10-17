@@ -24,7 +24,7 @@ namespace trashure
         public MainWindow()
         {
             InitializeComponent();
-            Navigate(Navigation.signin);
+            Navigate(Navigation.home);
         }
         public enum Navigation
         {
@@ -52,10 +52,10 @@ namespace trashure
                     mainFrame.Navigate(new DashboardPage(Navigate));
                     break;
                 case Navigation.signin:
-                    mainFrame.Navigate(new SignInPage());
+                    mainFrame.Navigate(new SignInPage(Navigate));
                     break;
                 case Navigation.signup:
-                    mainFrame.Navigate(new SignUpPage());
+                    mainFrame.Navigate(new SignUpPage(Navigate));
                     break;
                 case Navigation.tambahSampah:
                     mainFrame.Navigate(new TambahSampahPage());
@@ -71,6 +71,14 @@ namespace trashure
         private void NavigateDashboard(object sender, RoutedEventArgs e)
         {
             Navigate(Navigation.dashboard);
+        }
+        private void NavigateSignIn(object sender, RoutedEventArgs e)
+        {
+            Navigate(Navigation.signin);
+        }
+        private void NavigateSignUp(object sender, RoutedEventArgs e)
+        {
+            Navigate(Navigation.signup);
         }
 
         // Search bar functions

@@ -79,6 +79,18 @@
                     </Grid>
                 </Border>
             </Viewbox>
+
+            <!-- Sign In/Register -->
+            <Viewbox Grid.Column="2" HorizontalAlignment="Right">
+                <StackPanel Orientation="Horizontal">
+                    <Button Style="{StaticResource NavbarButton}" Click="NavigateSignIn">
+                        <TextBlock Text="Sign In" Padding="10,16" FontFamily="{StaticResource Default}" Foreground="{StaticResource fgColor-100}"/>
+                    </Button>
+                    <Button Style="{StaticResource NavbarButton}" Click="NavigateSignUp">
+                        <TextBlock Text="Sign Up" Padding="10,16" FontFamily="{StaticResource Default}" Foreground="{StaticResource fgColor-100}"/>
+                    </Button>
+                </StackPanel>
+            </Viewbox>
         </Grid>
 
         <!-- Frame -->
