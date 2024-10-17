@@ -24,7 +24,7 @@ namespace trashure
         public MainWindow()
         {
             InitializeComponent();
-            Navigate(Navigation.signin);
+            Navigate(Navigation.home);
         }
         public enum Navigation
         {

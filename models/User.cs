@@ -8,11 +8,10 @@ namespace trashure
 {
     class User
     {
-        public int userID;
-        public string userName;
-        public string password;
-        public string address;
-        public string phoneNumber;
-        public List<Item> items;
+        public int userID { get; set; }
+        public string userName { get; set; }
+        public string password { get; set; }
+        public string address { get; set; }
+        public string phoneNumber { get; set; }
     }
 }
