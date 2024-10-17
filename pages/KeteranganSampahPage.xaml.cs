@@ -28,5 +28,25 @@ namespace trashure.pages
             this.item = item;
             this.Navigate = Navigate;
         }
+
+        private void NavigateSignIn(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void onKontak(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ClickEditBarang(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void onChangeStatus(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
