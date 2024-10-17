@@ -55,7 +55,7 @@ namespace trashure
                     mainFrame.Navigate(new HomePage(NavigateItemClick));
                     break;
                 case Navigation.dashboard:
-                    mainFrame.Navigate(new DashboardPage(Navigate, NavigateItemClick));
+                    mainFrame.Navigate(new DashboardPage(user, Navigate, NavigateItemClick));
                     break;
                 case Navigation.signin:
                     mainFrame.Navigate(new SignInPage(Navigate));
