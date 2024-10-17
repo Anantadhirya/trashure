@@ -49,7 +49,7 @@ namespace trashure
                     mainFrame.Navigate(new HomePage());
                     break;
                 case Navigation.dashboard:
-                    mainFrame.Navigate(new DashboardPage());
+                    mainFrame.Navigate(new DashboardPage(Navigate));
                     break;
                 case Navigation.signin:
                     mainFrame.Navigate(new SignInPage());

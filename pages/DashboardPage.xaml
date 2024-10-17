@@ -11,10 +11,82 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/components/Styles.xaml" />
+                <ResourceDictionary Source="/components/Button.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
+
     <Grid Background="{StaticResource bgColor-100}">
-        <TextBlock Text="Dashboard Page" VerticalAlignment="Center" HorizontalAlignment="Center" FontFamily="{StaticResource Default}"/>
+        <Viewbox Name="SignInRequired" Visibility="Collapsed">
+            <StackPanel Width="500" Margin="100,0,100,0">
+                <TextBlock FontFamily="{StaticResource Default}" HorizontalAlignment="Center" Margin="0,0,0,10">
+                    <Run Text="Anda perlu melakukan"/>
+                    <Run Text="Sign In" FontWeight="Bold" FontFamily="{StaticResource Default}" />
+                    <Run Text="untuk mengakses dashboard Anda."/>
+                </TextBlock>
+                <Button Width="150" Content="Sign In" Click="NavigateSignIn" Style="{StaticResource DefaultButton}"/>
+            </StackPanel>
+        </Viewbox>
+        <ScrollViewer Name="Dashboard" VerticalScrollBarVisibility="Auto">
+            <Viewbox VerticalAlignment="Top" Stretch="UniformToFill" Margin="0,0,0,30">
+                <StackPanel Width="600" Margin="100,0,100,0">
+                    <!-- Profile Picture & Username -->
+                    <StackPanel Orientation="Horizontal" Margin="0,15,0,10">
+                        <Border Width="100" Height="100" CornerRadius="50">
+                            <Border.Clip>
+                                <EllipseGeometry RadiusX="50" RadiusY="50" Center="50,50" />
+                            </Border.Clip>
+                            <Viewbox>
+                                <Image Name="Gambar" Width="100" Height="100" Stretch="UniformToFill"/>
+                            </Viewbox>
+                        </Border>
+                        <StackPanel VerticalAlignment="Center" Margin="15,0,0,0">
+                            <TextBlock Text="Dashboard" FontFamily="{StaticResource Default}" FontWeight="Bold" FontSize="20"/>
+                            <TextBlock Name="Username" FontFamily="{StaticResource Default}" FontSize="18"/>
+                        </StackPanel>
+                    </StackPanel>
+                    <!-- List Barang -->
+                    <TextBlock Name="BookListText" Text="Barang Anda:" FontFamily="{StaticResource Default}" />
+                    <Button Height="100" Margin="0,3,0,3" Click="NavigateTambahSampah" FontSize="15" Style="{StaticResource ItemButton}">
+                        <TextBlock Text="Tambahkan Barang" FontFamily="{StaticResource Default}" HorizontalAlignment="Center"/>
+                    </Button>
+                    <!-- Map Barang -->
+                    <ItemsControl Name="BookList">
+                        <ItemsControl.ItemTemplate>
+                            <DataTemplate>
+                                <Button Style="{StaticResource ItemButton}" Height="100" Margin="0,2,0,2">
+                                    <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                                        <Border Width="90" Height="90" Background="{StaticResource bgColor-200}" CornerRadius="5">
+                                            <Image Source="{Binding image}" Margin="3,3,3,3"/>
+                                        </Border>
+                                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Margin="20,0,0,0">
+                                            <TextBlock Text="{Binding itemName}" FontSize="15" Margin="0,0,0,3" FontFamily="{StaticResource Default}" FontWeight="Bold"/>
+                                            <TextBlock Text="{Binding owner.userName}" FontSize="14" Margin="0,0,0,10"/>
+                                            <TextBlock FontSize="10">
+                                                <TextBlock.Style>
+                                                    <Style TargetType="TextBlock">
+                                                        <Setter Property="Text" Value="Not Available"/>
+                                                        <Style.Triggers>
+                                                            <DataTrigger Binding="{Binding available}" Value="True">
+                                                                <Setter Property="Text" Value="Available" />
+                                                                <Setter Property="Foreground" Value="Green" />
+                                                            </DataTrigger>
+                                                            <DataTrigger Binding="{Binding available}" Value="False">
+                                                                <Setter Property="Text" Value="Not Available"/>
+                                                                <Setter Property="Foreground" Value="Red" />
+                                                            </DataTrigger>
+                                                        </Style.Triggers>
+                                                    </Style>
+                                                </TextBlock.Style>
+                                            </TextBlock>
+                                        </StackPanel>
+                                    </StackPanel>
+                                </Button>
+                            </DataTemplate>
+                        </ItemsControl.ItemTemplate>
+                    </ItemsControl>
+                </StackPanel>
+            </Viewbox>
+        </ScrollViewer>
     </Grid>
 </Page>
