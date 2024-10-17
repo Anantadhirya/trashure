@@ -10,57 +10,29 @@
     <Page.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/components/Button.xaml" />
                 <ResourceDictionary Source="/components/Styles.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
-    <Grid Background="White">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="8*"/>
-            <ColumnDefinition Width="13*" />
-        </Grid.ColumnDefinitions>
-        <Grid Background="#32AC90">
-            <TextBlock Text="Trashure" FontFamily="{StaticResource Default}" Margin="0,124,0,0" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        </Grid>
-        <Grid Grid.Column="1">
-            <StackPanel Orientation="Vertical" Margin="20">
-                <TextBlock Text="Sign In" FontFamily="{StaticResource Default}" FontSize="25" HorizontalAlignment="Center" Margin="0,25" VerticalAlignment="Top" FontWeight="Bold" Padding="10" />
-                <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <TextBlock Text="User Name" FontFamily="{StaticResource Default}" Grid.Row="0" Margin="0,15" HorizontalAlignment="Left" />
-                    <TextBox Grid.Row="1" FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
-                    <TextBlock Text="Password" FontFamily="{StaticResource Default}" Grid.Row="2" Margin="0,15" HorizontalAlignment="Left"/>
-                    <PasswordBox Grid.Row="3" FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left"/>
-                </Grid>
-                <Button x:Name="SignInBtn" FontFamily="{StaticResource Default}" Content="Sign In" Foreground="White" Background="Black" Margin="0,25" Height="35" Width="250">
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Template">
-                                <Setter.Value>
-                                    <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border x:Name="SignInBorder" Background="#32AC90" CornerRadius="16">
-                                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                                        </Border>
-                                        <ControlTemplate.Triggers>
-                                            <Trigger Property="IsMouseOver" Value="True">
-                                                <Setter Property="Background" Value="AliceBlue" TargetName="SignInBorder"  />
-                                                <Setter Property="TextBlock.Foreground" Value="Black"  TargetName="SignInBorder" />
-                                            </Trigger>
-                                        </ControlTemplate.Triggers>
-                                    </ControlTemplate>
-                                </Setter.Value>
-                            </Setter>
-                        </Style>
-                    </Button.Style>
-                </Button>
-                <TextBlock Text="Not a member?" FontFamily="{StaticResource Default}" Margin="0,5" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                <TextBlock Text="Sign Up" FontFamily="{StaticResource Default}" Margin="0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-            </StackPanel>
-        </Grid>
+    <Grid>
+        <Image Source="/public/images/signinsignupBackground.jpg" Stretch="UniformToFill" Opacity="0.9"/>
+        <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Grid Background="White" Margin="200,100">
+                <Grid.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="0" Opacity="0.5"/>
+                </Grid.Effect>
+                <StackPanel Orientation="Vertical" Margin="20">
+                    <TextBlock Text="Sign In" FontFamily="{StaticResource Default}" FontSize="25" HorizontalAlignment="Center" Margin="0,25" VerticalAlignment="Top" FontWeight="Bold" Padding="10" />
+                    <TextBlock Text="Username" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left" />
+                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
+                    <TextBlock Text="Password" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left"/>
+                    <PasswordBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left"/>
+                    <Button x:Name="SignInBtn" Style="{StaticResource DefaultButton}" Content="Sign In" Margin="0,20,0,10" Height="35" Width="200" MouseDown="signinbutton_onClick"/>
+                    <TextBlock Text="Not a member?" FontFamily="{StaticResource Default}" Margin="0,5" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Sign Up" FontFamily="{StaticResource Default}" Margin="0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center" MouseDown="signup_onClick" Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </Viewbox>
     </Grid>
 </Page>

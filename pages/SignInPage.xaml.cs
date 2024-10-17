@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static trashure.MainWindow;
 
 namespace trashure.pages
 {
@@ -23,6 +24,14 @@ namespace trashure.pages
         public SignInPage()
         {
             InitializeComponent();
+        }
+
+        private void signup_onClick(object sender, MouseButtonEventArgs e)
+        {
+        }
+
+        private void signinbutton_onClick(object sender, MouseButtonEventArgs e)
+        {
         }
     }
 }

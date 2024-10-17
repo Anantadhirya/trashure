@@ -12,17 +12,26 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using static trashure.MainWindow;
 
 namespace trashure.pages
 {
     /// <summary>
-    /// Interaction logic for RegisterPage.xaml
+    /// Interaction logic for SignUpPage.xaml
     /// </summary>
-    public partial class RegisterPage : Page
+    public partial class SignUpPage : Page
     {
-        public RegisterPage()
+        public SignUpPage()
         {
             InitializeComponent();
+        }
+
+        private void signupbutton_onClick(object sender, MouseButtonEventArgs e)
+        {
+        }
+
+        private void signin_onClick(object sender, MouseButtonEventArgs e)
+        {
         }
     }
 }

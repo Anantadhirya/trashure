@@ -91,7 +91,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pages\RegisterPage.xaml">
+    <Page Include="pages\SignUpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -123,8 +123,8 @@
     <Compile Include="pages\KeteranganSampahPage.xaml.cs">
       <DependentUpon>KeteranganSampahPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="pages\RegisterPage.xaml.cs">
-      <DependentUpon>RegisterPage.xaml</DependentUpon>
+    <Compile Include="pages\SignUpPage.xaml.cs">
+      <DependentUpon>SignUpPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="pages\SignInPage.xaml.cs">
       <DependentUpon>SignInPage.xaml</DependentUpon>
@@ -173,6 +173,9 @@
     <Resource Include="public\images\placeholder-1.jpg" />
     <Resource Include="public\images\placeholder-2.jpg" />
     <Resource Include="public\images\placeholder-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="public\images\signinsignupBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="public\images\blank_profile.jpg" />

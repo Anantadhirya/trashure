@@ -1,0 +1,44 @@
+﻿<Page x:Class="trashure.pages.SignUpPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:trashure.pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="SignUpPage">
+    <Page.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/components/Button.xaml" />
+                <ResourceDictionary Source="/components/Styles.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Page.Resources>
+    <Grid>
+        <Image Source="/public/images/signinsignupBackground.jpg" Stretch="UniformToFill" Opacity="0.9"/>
+        <Viewbox HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Grid Background="White" Margin="200,25" Width="350">
+                <Grid.Effect>
+                    <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="0" Opacity="0.5"/>
+                </Grid.Effect>
+                <StackPanel Orientation="Vertical" Margin="20" HorizontalAlignment="Center">
+                    <TextBlock Text="Sign Up" FontFamily="{StaticResource Default}" FontSize="25" HorizontalAlignment="Center" Margin="0,25" VerticalAlignment="Top" FontWeight="Bold" Padding="10" />
+                    <TextBlock Text="Username" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left" />
+                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
+                    <TextBlock Text="Password" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left" />
+                    <PasswordBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Masukkan Kembali Password" FontFamily="{StaticResource Default}" Grid.Row="2" Margin="0,15" HorizontalAlignment="Left"/>
+                    <PasswordBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left"/>
+                    <TextBlock Text="Alamat" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left" />
+                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
+                    <TextBlock Text="Nomor Telepon" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left" />
+                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
+                    <Button x:Name="SignUpBtn" Style="{StaticResource DefaultButton}" Content="Sign Up" Margin="0,20,0,10" Height="35" Width="200" MouseDown="signupbutton_onClick"/>
+                    <TextBlock Text="Already a member?" FontFamily="{StaticResource Default}" Margin="0,5" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Sign In" FontFamily="{StaticResource Default}" Margin="0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center" MouseDown="signin_onClick" Cursor="Hand"/>
+                </StackPanel>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</Page>

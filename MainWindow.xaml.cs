@@ -24,7 +24,7 @@ namespace trashure
         public MainWindow()
         {
             InitializeComponent();
-            Navigate(Navigation.home);
+            Navigate(Navigation.signin);
         }
         public enum Navigation
         {
@@ -32,7 +32,7 @@ namespace trashure
             home,
             dashboard,
             signin,
-            register,
+            signup,
             tambahSampah,
             keteranganSampah,
             editSampah,
@@ -54,8 +54,8 @@ namespace trashure
                 case Navigation.signin:
                     mainFrame.Navigate(new SignInPage());
                     break;
-                case Navigation.register:
-                    mainFrame.Navigate(new RegisterPage());
+                case Navigation.signup:
+                    mainFrame.Navigate(new SignUpPage());
                     break;
                 case Navigation.tambahSampah:
                     mainFrame.Navigate(new TambahSampahPage());
