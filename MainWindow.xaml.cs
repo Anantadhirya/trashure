@@ -42,8 +42,23 @@ namespace trashure
         {
             switch (target)
             {
+                case Navigation.back:
+                    if(mainFrame.CanGoBack) mainFrame.GoBack();
+                    break;
+                case Navigation.home:
+                    mainFrame.Navigate(new HomePage());
+                    break;
+                case Navigation.dashboard:
+                    mainFrame.Navigate(new DashboardPage());
+                    break;
                 case Navigation.signin:
                     mainFrame.Navigate(new SignInPage());
+                    break;
+                case Navigation.register:
+                    mainFrame.Navigate(new RegisterPage());
+                    break;
+                case Navigation.tambahSampah:
+                    mainFrame.Navigate(new TambahSampahPage());
                     break;
             }
         }
