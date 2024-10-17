@@ -20,26 +20,19 @@ namespace trashure.pages
     /// </summary>
     public partial class DashboardPage : Page
     {
-        private bool isSignedIn;
-        private User user;
+        User user;
         Action<MainWindow.Navigation> Navigate;
         Action<object, RoutedEventArgs> NavigateItemClick;
-        public DashboardPage(Action<MainWindow.Navigation> Navigate, Action<object, RoutedEventArgs> NavigateItemClick)
+        public DashboardPage(User user, Action<MainWindow.Navigation> Navigate, Action<object, RoutedEventArgs> NavigateItemClick)
         {
             InitializeComponent();
-            isSignedIn = true;
-            user = new User { userID = 1, userName = "Ananta", password = "password1", address = "Bantul, D. I. Yogyakarta", phoneNumber = "123-456-7890", items = new List<Item>() };
-            Item item1 = new Item { itemID = 1, owner = user, itemName = "AC Rusak", available = true, image = "/public/images/placeholder-1.jpg" };
-            Item item2 = new Item { itemID = 2, owner = user, itemName = "Botol Bekas", available = true, image = "/public/images/placeholder-2.jpg" };
-            user.items.Add(item1);
-            user.items.Add(item2);
-            updateSignedIn(isSignedIn, user);
+            updateSignedIn(user);
             this.Navigate = Navigate;
             this.NavigateItemClick = NavigateItemClick;
         }
-        private void updateSignedIn(bool isSignedIn, User user)
+        private void updateSignedIn(User user)
         {
-            this.isSignedIn = isSignedIn;
+            bool isSignedIn = user != null;
             this.user = user;
             SignInRequired.Visibility = !isSignedIn ? Visibility.Visible : Visibility.Collapsed;
             Dashboard.Visibility = isSignedIn ? Visibility.Visible : Visibility.Collapsed;
