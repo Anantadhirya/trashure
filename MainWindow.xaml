@@ -10,6 +10,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="/components/Styles.xaml" />
+                <ResourceDictionary Source="/components/Button.xaml" />
                 <ResourceDictionary Source="/public/icons/Drawable.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
@@ -32,14 +33,14 @@
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="1">
                 <Viewbox>
-                    <Menu HorizontalAlignment="Center" Background="Transparent">
+                    <Button Style="{StaticResource NavbarButton}" Click="NavigateHome">
                         <Path Margin="8,12" Data="{StaticResource iconHome}" Fill="{StaticResource fgColor-100}" VerticalAlignment="Center" Stretch="Fill" Width="19"/>
-                    </Menu>
+                    </Button>
                 </Viewbox>
                 <Viewbox>
-                    <Menu HorizontalAlignment="Center" Background="Transparent">
+                    <Button Style="{StaticResource NavbarButton}" Click="NavigateDashboard">
                         <Path Margin="8,12" Data="{StaticResource iconDashboard}" Fill="{StaticResource fgColor-100}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                    </Menu>
+                    </Button>
                 </Viewbox>
             </StackPanel>
         </Grid>

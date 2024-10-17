@@ -4,6 +4,7 @@
         <ResourceDictionary Source="/components/Styles.xaml" />
     </ResourceDictionary.MergedDictionaries>
 
+    <!-- Default Button -->
     <Style x:Key="DefaultButton" TargetType="Button">
         <Setter Property="Background" Value="{StaticResource fgColor-100}"/>
         <Setter Property="Foreground" Value="{StaticResource bgColor-100}" />
@@ -24,7 +25,28 @@
             </Trigger>
         </Style.Triggers>
     </Style>
+    
+    <!-- Navbar Button -->
+    <Style x:Key="NavbarButton" TargetType="Button">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border Background="{TemplateBinding Background}" BorderThickness="0">
+                        <ContentPresenter VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Background" Value="{StaticResource fgColor-200}"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
 
+    <!-- Item Button -->
     <Style x:Key="ItemButton" TargetType="Button">
         <Setter Property="Background" Value="Transparent"/>
         <Setter Property="BorderBrush" Value="{StaticResource fgColor-200}" />

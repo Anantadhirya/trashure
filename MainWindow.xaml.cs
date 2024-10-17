@@ -63,6 +63,17 @@ namespace trashure
             }
         }
 
+        // Navigation Click Functions
+        private void NavigateHome(object sender, RoutedEventArgs e)
+        {
+            Navigate(Navigation.home);
+        }
+        private void NavigateDashboard(object sender, RoutedEventArgs e)
+        {
+            Navigate(Navigation.dashboard);
+        }
+
+        // Search bar functions
         private void onTextChanged(object sender, TextChangedEventArgs e)
         {
             ClearButton.Visibility = string.IsNullOrEmpty(SearchText.Text) ? Visibility.Collapsed : Visibility.Visible;
@@ -72,7 +83,6 @@ namespace trashure
         {
             SearchPlaceholder.Visibility = Visibility.Collapsed;
         }
-
         private void onSearchLostFocus(object sender, RoutedEventArgs e)
         {
             SearchPlaceholder.Visibility = string.IsNullOrEmpty(SearchText.Text) ? Visibility.Visible : Visibility.Collapsed;
