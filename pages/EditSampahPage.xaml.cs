@@ -27,6 +27,12 @@ namespace trashure.pages
             InitializeComponent();
             this.item = item;
             this.Navigate = Navigate;
+            initDefaultValue();
+        }
+        public void initDefaultValue()
+        {
+            NamaBarang.Text = item.itemName;
+            Gambar.Source = item.image != null ? new BitmapImage(new Uri(item.image, UriKind.RelativeOrAbsolute)) : null;
         }
 
         private void onUbahGambar(object sender, RoutedEventArgs e)
