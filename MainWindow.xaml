@@ -16,57 +16,53 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="5*" />
-            <ColumnDefinition Width="95*" />
+            <ColumnDefinition Width="0.05*" />
+            <ColumnDefinition Width="0.95*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition Height="5*" MinHeight="30"/>
-            <RowDefinition Height="95*"/>
+            <RowDefinition Height="0.08*" />
+            <RowDefinition Height="0.92*"/>
         </Grid.RowDefinitions>
 
         <!-- Left Navbar -->
         <Grid Grid.RowSpan="2" Grid.Column="0" Background="{StaticResource bgColor-200}">
             <Grid.RowDefinitions>
-                <RowDefinition Height="5*" MinHeight="30"/>
-                <RowDefinition Height="15*" MinHeight="30"/>
-                <RowDefinition Height="15*" MinHeight="30"/>
-                <RowDefinition Height="65*" MinHeight="30"/>
+                <RowDefinition Height="0.08*" />
+                <RowDefinition Height="0.92*" />
             </Grid.RowDefinitions>
-
-            <Viewbox Grid.Row="1">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                    <Path Data="{StaticResource iconHome}" Fill="{StaticResource fgColor-100}" VerticalAlignment="Center" Stretch="Fill" Width="19"/>
-                </StackPanel>
-            </Viewbox>
-
-
-            <Viewbox Grid.Row="2">
-                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                    <Path Data="{StaticResource iconDashboard}" Fill="{StaticResource fgColor-100}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                </StackPanel>
-            </Viewbox>
+            <StackPanel Grid.Row="1">
+                <Viewbox>
+                    <Menu HorizontalAlignment="Center" Background="Transparent">
+                        <Path Margin="8,12" Data="{StaticResource iconHome}" Fill="{StaticResource fgColor-100}" VerticalAlignment="Center" Stretch="Fill" Width="19"/>
+                    </Menu>
+                </Viewbox>
+                <Viewbox>
+                    <Menu HorizontalAlignment="Center" Background="Transparent">
+                        <Path Margin="8,12" Data="{StaticResource iconDashboard}" Fill="{StaticResource fgColor-100}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Menu>
+                </Viewbox>
+            </StackPanel>
         </Grid>
 
         <!-- Top Navbar -->
         <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="{StaticResource bgColor-200}">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="5*"/>
-                <ColumnDefinition Width="10*"/>
-                <ColumnDefinition Width="65*"/>
-                <ColumnDefinition Width="20*"/>
+                <ColumnDefinition Width="0.25*"/>
+                <ColumnDefinition Width="0.5*"/>
+                <ColumnDefinition Width="0.25*"/>
             </Grid.ColumnDefinitions>
 
             <!-- Judul -->
-            <Viewbox Grid.Column="1" HorizontalAlignment="Left">
-                <TextBlock Text="TRASHURE" Foreground="{StaticResource fgColor-100}" Padding="10,5,10,5" FontFamily="{StaticResource Default}"/>
+            <Viewbox Grid.Column="0" HorizontalAlignment="Left">
+                <TextBlock Text="TRASHURE" Foreground="{StaticResource fgColor-100}" Padding="10,5" FontFamily="{StaticResource Default}" FontWeight="SemiBold"/>
             </Viewbox>
 
             <!-- Search bar -->
-            <Grid Grid.Column="2" HorizontalAlignment="Center">
-                <Border MinWidth="500" Height="25" CornerRadius="3" Background="{StaticResource searchbarbgColor}">
-                    <Grid Margin="2">
+            <Viewbox Grid.Column="1" HorizontalAlignment="Center">
+                <Border Width="400" Height="20" Margin="0,5" CornerRadius="5" Background="{StaticResource searchbarbgColor}">
+                    <Grid Margin="2,2,5,2">
                         <!-- Placeholder TextBlock -->
-                        <TextBlock Name="SearchPlaceholder" Text="Search" FontFamily="{StaticResource Default}" FontSize="11" Foreground="{StaticResource searchbarfgColor}" VerticalAlignment="Center" Padding="10,5"/>
+                        <TextBlock Name="SearchPlaceholder" Text="Cari barang Anda di sini" FontFamily="{StaticResource Default}" FontSize="11" Foreground="{StaticResource searchbarfgColor}" VerticalAlignment="Center" Padding="10,5"/>
 
                         <!-- Search TextBox -->
                         <TextBox Name="SearchText" BorderThickness="0" FontFamily="{StaticResource Default}" Background ="Transparent" Foreground="White" FontSize="11" VerticalAlignment="Center" Padding="10,0" TextChanged ="onTextChanged" GotFocus="onSearchGotFocus" LostFocus="onSearchLostFocus"/>
@@ -81,7 +77,7 @@
                         </Button>
                     </Grid>
                 </Border>
-            </Grid>
+            </Viewbox>
         </Grid>
 
         <!-- Frame -->
