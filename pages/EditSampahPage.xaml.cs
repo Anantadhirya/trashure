@@ -28,5 +28,20 @@ namespace trashure.pages
             this.item = item;
             this.Navigate = Navigate;
         }
+
+        private void onUbahGambar(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void HapusSampah(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void onSave(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
