@@ -1,0 +1,12 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Geometry x:Key="iconHome">
+        M10,20v-6h4v6h5v-8h3L12,3 2,12h3v8z
+    </Geometry>
+
+    <Geometry x:Key="iconDashboard">
+        M10,6V0H18V6H10ZM0,10V0H8V10H0ZM10,18V8H18V18H10ZM0,18V12H8V18H0Z
+    </Geometry>
+    
+</ResourceDictionary>
