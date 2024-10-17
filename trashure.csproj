@@ -55,6 +55,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="components\Styles.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -90,14 +94,24 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Resource Include="public\fonts\OpenSans-Bold.ttf" />
+    <Resource Include="public\fonts\OpenSans-BoldItalic.ttf" />
+    <Resource Include="public\fonts\OpenSans-ExtraBold.ttf" />
+    <Resource Include="public\fonts\OpenSans-ExtraBoldItalic.ttf" />
+    <Resource Include="public\fonts\OpenSans-Italic.ttf" />
+    <Resource Include="public\fonts\OpenSans-Light.ttf" />
+    <Resource Include="public\fonts\OpenSans-LightItalic.ttf" />
+    <Resource Include="public\fonts\OpenSans-Medium.ttf" />
+    <Resource Include="public\fonts\OpenSans-MediumItalic.ttf" />
+    <Resource Include="public\fonts\OpenSans-Regular.ttf" />
+    <Resource Include="public\fonts\OpenSans-SemiBold.ttf" />
+    <Resource Include="public\fonts\OpenSans-SemiBoldItalic.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="components\" />
     <Folder Include="pages\" />
-    <Folder Include="public\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
