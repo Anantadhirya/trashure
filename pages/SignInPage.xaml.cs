@@ -12,7 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using static trashure.MainWindow;
 
 namespace trashure.pages
 {
@@ -34,7 +33,7 @@ namespace trashure.pages
         }
         private void onSignUp(object sender, MouseButtonEventArgs e)
         {
-            Navigate(Navigation.signup);
+            Navigate(MainWindow.Navigation.signup);
         }
     }
 }
