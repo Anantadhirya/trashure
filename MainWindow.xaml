@@ -55,7 +55,9 @@
 
             <!-- Judul -->
             <Viewbox Grid.Column="0" HorizontalAlignment="Left">
-                <TextBlock Text="TRASHURE" Foreground="{StaticResource fgColor-100}" Padding="10,5" FontFamily="{StaticResource Default}" FontWeight="SemiBold"/>
+                <Button Style="{StaticResource NavbarButton}" Click="NavigateHome">
+                    <TextBlock Text="TRASHURE" Foreground="{StaticResource fgColor-100}" Padding="10,5" FontFamily="{StaticResource Default}" FontWeight="SemiBold"/>
+                </Button>
             </Viewbox>
 
             <!-- Search bar -->
