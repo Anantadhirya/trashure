@@ -21,9 +21,15 @@ namespace trashure
     /// </summary>
     public partial class MainWindow : Window
     {
+        User user;
         public MainWindow()
         {
             InitializeComponent();
+            user = new User { userID = 1, userName = "Ananta", password = "password1", address = "Bantul, D. I. Yogyakarta", phoneNumber = "123-456-7890", items = new List<Item>() };
+            Item item1 = new Item { itemID = 1, owner = user, itemName = "AC Rusak", available = true, image = "/public/images/placeholder-1.jpg" };
+            Item item2 = new Item { itemID = 2, owner = user, itemName = "Botol Bekas", available = true, image = "/public/images/placeholder-2.jpg" };
+            user.items.Add(item1);
+            user.items.Add(item2);
             Navigate(Navigation.home);
         }
         public enum Navigation
@@ -46,10 +52,10 @@ namespace trashure
                     if(mainFrame.CanGoBack) mainFrame.GoBack();
                     break;
                 case Navigation.home:
-                    mainFrame.Navigate(new HomePage());
+                    mainFrame.Navigate(new HomePage(NavigateItemClick));
                     break;
                 case Navigation.dashboard:
-                    mainFrame.Navigate(new DashboardPage(Navigate));
+                    mainFrame.Navigate(new DashboardPage(Navigate, NavigateItemClick));
                     break;
                 case Navigation.signin:
                     mainFrame.Navigate(new SignInPage(Navigate));
@@ -80,9 +86,18 @@ namespace trashure
         {
             Navigate(Navigation.signup);
         }
-        private void NavigateEditBuku(Item item)
+        private void NavigateItemClick(object sender, RoutedEventArgs e)
         {
-            mainFrame.Navigate(new EditSampahPage(item, Navigate));
+            if(sender is Button button && button.DataContext is Item clickedItem)
+            {
+                if(clickedItem.owner.userID == user.userID)
+                {
+                    mainFrame.Navigate(new EditSampahPage(clickedItem, Navigate));
+                } else
+                {
+                    mainFrame.Navigate(new KeteranganSampahPage(clickedItem, Navigate));
+                }
+            }
         }
 
         // Search bar functions

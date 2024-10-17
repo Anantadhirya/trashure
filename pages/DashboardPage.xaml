@@ -54,7 +54,7 @@
                     <ItemsControl Name="BookList">
                         <ItemsControl.ItemTemplate>
                             <DataTemplate>
-                                <Button Style="{StaticResource ItemButton}" Height="100" Margin="0,2,0,2">
+                                <Button Style="{StaticResource ItemButton}" Height="100" Margin="0,2,0,2" Click="NavigateItemClick">
                                     <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
                                         <Border Width="90" Height="90" Background="{StaticResource bgColor-200}" CornerRadius="5">
                                             <Image Source="{Binding image}" Margin="3,3,3,3"/>

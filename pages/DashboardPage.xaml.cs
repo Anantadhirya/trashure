@@ -23,7 +23,8 @@ namespace trashure.pages
         private bool isSignedIn;
         private User user;
         Action<MainWindow.Navigation> Navigate;
-        public DashboardPage(Action<MainWindow.Navigation> Navigate)
+        Action<object, RoutedEventArgs> NavigateItemClick;
+        public DashboardPage(Action<MainWindow.Navigation> Navigate, Action<object, RoutedEventArgs> NavigateItemClick)
         {
             InitializeComponent();
             isSignedIn = true;
@@ -34,6 +35,7 @@ namespace trashure.pages
             user.items.Add(item2);
             updateSignedIn(isSignedIn, user);
             this.Navigate = Navigate;
+            this.NavigateItemClick = NavigateItemClick;
         }
         private void updateSignedIn(bool isSignedIn, User user)
         {

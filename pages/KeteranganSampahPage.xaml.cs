@@ -20,9 +20,13 @@ namespace trashure.pages
     /// </summary>
     public partial class KeteranganSampahPage : Page
     {
-        public KeteranganSampahPage()
+        Item item;
+        Action<MainWindow.Navigation> Navigate;
+        public KeteranganSampahPage(Item item, Action<MainWindow.Navigation> Navigate)
         {
             InitializeComponent();
+            this.item = item;
+            this.Navigate = Navigate;
         }
     }
 }

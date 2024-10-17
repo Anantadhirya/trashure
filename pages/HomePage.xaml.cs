@@ -20,9 +20,11 @@ namespace trashure.pages
     /// </summary>
     public partial class HomePage : Page
     {
-        public HomePage()
+        Action<object, RoutedEventArgs> NavigateItemClick;
+        public HomePage(Action<object, RoutedEventArgs> NavigateItemClick)
         {
             InitializeComponent();
+            this.NavigateItemClick = NavigateItemClick;
 
             // Placeholder data
             User user1 = new User { userID = 1, userName = "Ananta", password = "password1", address = "Bantul, D. I. Yogyakarta", phoneNumber = "123-456-7890" };
