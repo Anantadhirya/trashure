@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:trashure"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" MinHeight="270" MinWidth="480">
+        Title="Trashure" Height="450" Width="800" MinHeight="270" MinWidth="480">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
