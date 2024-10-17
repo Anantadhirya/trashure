@@ -101,6 +101,8 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="models\Item.cs" />
+    <Compile Include="models\User.cs" />
     <Compile Include="pages\DashboardPage.xaml.cs">
       <DependentUpon>DashboardPage.xaml</DependentUpon>
     </Compile>
