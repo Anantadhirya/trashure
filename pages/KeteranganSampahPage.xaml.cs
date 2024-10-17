@@ -27,6 +27,24 @@ namespace trashure.pages
             InitializeComponent();
             this.item = item;
             this.Navigate = Navigate;
+            Judul.Text = item.itemName;
+            Gambar.Source = item.image != null ? new BitmapImage(new Uri(item.image, UriKind.RelativeOrAbsolute)) : null;
+            Owner.Text = item.owner.userName;
+            GambarPemilik.Source = new BitmapImage(new Uri(item.owner != null && item.owner.image != null ? item.owner.image : "pack://application:,,,/public/images/blank_profile.jpg"));
+            updateStatusItem();
+        }
+        private void updateStatusItem()
+        {
+            if (item.available)
+            {
+                Status.Text = "Tersedia";
+                Status.Foreground = new SolidColorBrush(Colors.Green);
+            }
+            else
+            {
+                Status.Text = "Tidak Tersedia";
+                Status.Foreground = new SolidColorBrush(Colors.Red);
+            }
         }
 
         private void NavigateSignIn(object sender, RoutedEventArgs e)
