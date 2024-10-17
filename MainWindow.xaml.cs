@@ -80,6 +80,10 @@ namespace trashure
         {
             Navigate(Navigation.signup);
         }
+        private void NavigateEditBuku(Item item)
+        {
+            mainFrame.Navigate(new EditSampahPage(item, Navigate));
+        }
 
         // Search bar functions
         private void onTextChanged(object sender, TextChangedEventArgs e)

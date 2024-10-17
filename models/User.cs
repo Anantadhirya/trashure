@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace trashure
 {
-    class User
+    public class User
     {
         public int userID { get; set; }
         public string userName { get; set; }

@@ -20,9 +20,13 @@ namespace trashure.pages
     /// </summary>
     public partial class EditSampahPage : Page
     {
-        public EditSampahPage()
+        Item item;
+        Action<MainWindow.Navigation> Navigate;
+        public EditSampahPage(Item item, Action<MainWindow.Navigation> Navigate)
         {
             InitializeComponent();
+            this.item = item;
+            this.Navigate = Navigate;
         }
     }
 }
