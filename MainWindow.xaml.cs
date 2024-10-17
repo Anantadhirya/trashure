@@ -62,5 +62,25 @@ namespace trashure
                     break;
             }
         }
+
+        private void onTextChanged(object sender, TextChangedEventArgs e)
+        {
+            ClearButton.Visibility = string.IsNullOrEmpty(SearchText.Text) ? Visibility.Collapsed : Visibility.Visible;
+        }
+
+        private void onSearchGotFocus(object sender, RoutedEventArgs e)
+        {
+            SearchPlaceholder.Visibility = Visibility.Collapsed;
+        }
+
+        private void onSearchLostFocus(object sender, RoutedEventArgs e)
+        {
+            SearchPlaceholder.Visibility = string.IsNullOrEmpty(SearchText.Text) ? Visibility.Visible : Visibility.Collapsed;
+        }
+        private void onClear(object sender, RoutedEventArgs e)
+        {
+            SearchText.Text = "";
+            onSearchLostFocus(sender, null);
+        }
     }
 }
