@@ -23,20 +23,33 @@
                     <DropShadowEffect Color="Black" BlurRadius="20" ShadowDepth="0" Opacity="0.5"/>
                 </Grid.Effect>
                 <StackPanel Orientation="Vertical" Margin="20" HorizontalAlignment="Center">
+                    <!-- Title -->
                     <TextBlock Text="Sign Up" FontFamily="{StaticResource Default}" FontSize="25" HorizontalAlignment="Center" Margin="0,25" VerticalAlignment="Top" FontWeight="Bold" Padding="10" />
-                    <TextBlock Text="Username" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left" />
-                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
-                    <TextBlock Text="Password" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left" />
-                    <PasswordBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left"/>
-                    <TextBlock Text="Masukkan Kembali Password" FontFamily="{StaticResource Default}" Grid.Row="2" Margin="0,15" HorizontalAlignment="Left"/>
-                    <PasswordBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left"/>
-                    <TextBlock Text="Alamat" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left" />
-                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
-                    <TextBlock Text="Nomor Telepon" FontFamily="{StaticResource Default}" Margin="0,15" HorizontalAlignment="Left" />
-                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="255" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
+                    
+                    <!-- Username -->
+                    <TextBlock Text="Username" FontFamily="{StaticResource Default}" Margin="0,15,0,0" HorizontalAlignment="Left" />
+                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="280" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
+                    
+                    <!-- Password -->
+                    <TextBlock Text="Password" FontFamily="{StaticResource Default}" Margin="0,15,0,0" HorizontalAlignment="Left" />
+                    <PasswordBox FontFamily="{StaticResource Default}" Padding="0,5" Width="280" BorderThickness="0,0,0,1" HorizontalAlignment="Left"/>
+                    
+                    <!-- Confirm Password -->
+                    <TextBlock Text="Konfirmasi Password" FontFamily="{StaticResource Default}" Grid.Row="2" Margin="0,15,0,0" HorizontalAlignment="Left"/>
+                    <PasswordBox FontFamily="{StaticResource Default}" Padding="0,5" Width="280" BorderThickness="0,0,0,1" HorizontalAlignment="Left"/>
+                    
+                    <!-- Alamat -->
+                    <TextBlock Text="Alamat" FontFamily="{StaticResource Default}" Margin="0,15,0,0" HorizontalAlignment="Left" />
+                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="280" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
+                    
+                    <!-- Nomor Telepon -->
+                    <TextBlock Text="Nomor Telepon" FontFamily="{StaticResource Default}" Margin="0,15,0,0" HorizontalAlignment="Left" />
+                    <TextBox FontFamily="{StaticResource Default}" Padding="0,5" Width="280" BorderThickness="0,0,0,1" HorizontalAlignment="Left" />
+                    
+                    <!-- Sign Up Button -->
                     <Button x:Name="SignUpBtn" Style="{StaticResource DefaultButton}" Content="Sign Up" Margin="0,20,0,10" Height="35" Width="200" MouseDown="signupbutton_onClick"/>
-                    <TextBlock Text="Already a member?" FontFamily="{StaticResource Default}" Margin="0,5" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
-                    <TextBlock Text="Sign In" FontFamily="{StaticResource Default}" Margin="0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center" MouseDown="onSignIn" Cursor="Hand"/>
+                    <TextBlock Text="Already a member?" FontFamily="{StaticResource Default}" Margin="0,5,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Sign In" FontFamily="{StaticResource Default}" Foreground="{StaticResource fgColor-100}" Margin="0,5,0,10" VerticalAlignment="Bottom" HorizontalAlignment="Center" MouseDown="onSignIn" Cursor="Hand"/>
                 </StackPanel>
             </Grid>
         </Viewbox>
