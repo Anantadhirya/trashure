@@ -36,7 +36,7 @@
                     
                     <!-- Sign In Button -->
                     <Button x:Name="SignInBtn" Style="{StaticResource DefaultButton}" Content="Sign In" Margin="0,20,0,10" Height="35" Width="200" MouseDown="signinbutton_onClick"/>
-                    <TextBlock Text="Not a member?" FontFamily="{StaticResource Default}" Margin="0,5,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Belum punya akun?" FontFamily="{StaticResource Default}" Margin="0,5,0,0" VerticalAlignment="Bottom" HorizontalAlignment="Center"/>
                     <TextBlock Text="Sign Up" FontFamily="{StaticResource Default}" Foreground="{StaticResource fgColor-100}" Margin="0,5,0,10"  VerticalAlignment="Bottom" HorizontalAlignment="Center" MouseDown="onSignUp" Cursor="Hand"/>
                 </StackPanel>
             </Grid>
