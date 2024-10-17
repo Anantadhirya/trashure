@@ -35,7 +35,7 @@
 
             <Viewbox Grid.Row="1">
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="5">
-                    <Path Data="{StaticResource iconHome}" Fill="{StaticResource fgColor-100}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    <Path Data="{StaticResource iconHome}" Fill="{StaticResource fgColor-100}" VerticalAlignment="Center" Stretch="Fill" Width="19"/>
                 </StackPanel>
             </Viewbox>
 
@@ -46,43 +46,43 @@
                 </StackPanel>
             </Viewbox>
         </Grid>
-        
+
         <!-- Top Navbar -->
-<Grid Grid.Row="0" Grid.ColumnSpan="2" Background="{StaticResource bgColor-200}">
-    <Grid.ColumnDefinitions>
-        <ColumnDefinition Width="5*"/>
-        <ColumnDefinition Width="10*"/>
-        <ColumnDefinition Width="65*"/>
-        <ColumnDefinition Width="20*"/>
-    </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2" Background="{StaticResource bgColor-200}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="10*"/>
+                <ColumnDefinition Width="65*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
 
-    <!-- Judul -->
-    <Viewbox Grid.Column="1" HorizontalAlignment="Left">
-        <TextBlock Text="TRASHURE" Foreground="{StaticResource fgColor-100}" Padding="10,5,10,5" FontFamily="{StaticResource Default}"/>
-    </Viewbox>
+            <!-- Judul -->
+            <Viewbox Grid.Column="1" HorizontalAlignment="Left">
+                <TextBlock Text="TRASHURE" Foreground="{StaticResource fgColor-100}" Padding="10,5,10,5" FontFamily="{StaticResource Default}"/>
+            </Viewbox>
 
-    <!-- Search bar -->
-    <Grid Grid.Column="2" HorizontalAlignment="Center">
-        <Border MinWidth="500" Height="25" CornerRadius="3" Background="{StaticResource searchbarbgColor}">
-            <Grid Margin="2">
-                <!-- Placeholder TextBlock -->
-                <TextBlock Name="SearchPlaceholder" Text="Search" FontFamily="{StaticResource Default}" FontSize="11" Foreground="{StaticResource searchbarfgColor}" VerticalAlignment="Center" Padding="10,5"/>
-                
-                <!-- Search TextBox -->
-                <TextBox Name="SearchText" BorderThickness="0" FontFamily="{StaticResource Default}" Background ="Transparent" Foreground="White" FontSize="11" VerticalAlignment="Center" Padding="10,0" TextChanged ="onTextChanged" GotFocus="onSearchGotFocus" LostFocus="onSearchLostFocus"/>
-                
-                <!-- Clear Button -->
-                <Button Name="ClearButton" Click="onClear" Visibility="Collapsed" Width="10" Height="10" HorizontalAlignment="Right" BorderBrush="Transparent" Background="Transparent">
-                    <Viewbox>
-                        <Canvas Width="24" Height="24">
-                            <Path Data="M2,2 L22,22 M22,2 L2,22" Stroke="{StaticResource searchbarfgColor}" StrokeThickness="2"/>
-                        </Canvas>
-                    </Viewbox>
-                </Button>
+            <!-- Search bar -->
+            <Grid Grid.Column="2" HorizontalAlignment="Center">
+                <Border MinWidth="500" Height="25" CornerRadius="3" Background="{StaticResource searchbarbgColor}">
+                    <Grid Margin="2">
+                        <!-- Placeholder TextBlock -->
+                        <TextBlock Name="SearchPlaceholder" Text="Search" FontFamily="{StaticResource Default}" FontSize="11" Foreground="{StaticResource searchbarfgColor}" VerticalAlignment="Center" Padding="10,5"/>
+
+                        <!-- Search TextBox -->
+                        <TextBox Name="SearchText" BorderThickness="0" FontFamily="{StaticResource Default}" Background ="Transparent" Foreground="White" FontSize="11" VerticalAlignment="Center" Padding="10,0" TextChanged ="onTextChanged" GotFocus="onSearchGotFocus" LostFocus="onSearchLostFocus"/>
+
+                        <!-- Clear Button -->
+                        <Button Name="ClearButton" Click="onClear" Visibility="Collapsed" Width="10" Height="10" HorizontalAlignment="Right" BorderBrush="Transparent" Background="Transparent">
+                            <Viewbox>
+                                <Canvas Width="24" Height="24">
+                                    <Path Data="M2,2 L22,22 M22,2 L2,22" Stroke="{StaticResource searchbarfgColor}" StrokeThickness="2"/>
+                                </Canvas>
+                            </Viewbox>
+                        </Button>
+                    </Grid>
+                </Border>
             </Grid>
-        </Border>
-    </Grid>
-</Grid>
+        </Grid>
 
         <!-- Frame -->
         <Frame Grid.Row="1" Grid.Column="1" Name="mainFrame" NavigationUIVisibility="Hidden"/>
