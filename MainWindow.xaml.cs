@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using trashure.pages;
 
 namespace trashure
 {
@@ -23,6 +24,28 @@ namespace trashure
         public MainWindow()
         {
             InitializeComponent();
+            Navigate(Navigation.signin);
+        }
+        public enum Navigation
+        {
+            back,
+            home,
+            dashboard,
+            signin,
+            register,
+            tambahSampah,
+            keteranganSampah,
+            editSampah,
+            editProfil,
+        }
+        public void Navigate(Navigation target)
+        {
+            switch (target)
+            {
+                case Navigation.signin:
+                    mainFrame.Navigate(new SignInPage());
+                    break;
+            }
         }
     }
 }
