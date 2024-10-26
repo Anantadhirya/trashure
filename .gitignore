@@ -5,3 +5,5 @@ obj/
 # User-specific files
 .vscode/
 .vs/
+
+packages/
