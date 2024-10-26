@@ -83,7 +83,7 @@
             </Viewbox>
 
             <!-- Sign In/Register -->
-            <Viewbox Grid.Column="2" HorizontalAlignment="Right">
+            <Viewbox Name="AuthMenu" Grid.Column="2" HorizontalAlignment="Right">
                 <StackPanel Orientation="Horizontal">
                     <Button Style="{StaticResource NavbarButton}" Click="NavigateSignIn">
                         <TextBlock Text="Sign In" Padding="10,16" FontFamily="{StaticResource Default}" Foreground="{StaticResource fgColor-100}"/>
@@ -92,6 +92,14 @@
                         <TextBlock Text="Sign Up" Padding="10,16" FontFamily="{StaticResource Default}" Foreground="{StaticResource fgColor-100}"/>
                     </Button>
                 </StackPanel>
+            </Viewbox>
+            <Viewbox Name="ProfileMenu" Grid.Column="2" HorizontalAlignment="Right" Visibility="Collapsed">
+                <Menu Background="Transparent" Foreground="White" FontFamily="{StaticResource Default}">
+                    <MenuItem Name="Profile" Padding="10,16" Cursor="Hand" Foreground="{StaticResource fgColor-100}">
+                        <MenuItem Header="Profile" Foreground="{StaticResource fgColor-100}" BorderThickness="0" Cursor="Hand"/>
+                        <MenuItem Header="Sign Out" Click="SignOut"  Foreground="{StaticResource fgColor-100}" BorderThickness="0" Cursor="Hand"/>
+                    </MenuItem>
+                </Menu>
             </Viewbox>
         </Grid>
 

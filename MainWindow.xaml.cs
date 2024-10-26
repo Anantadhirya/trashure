@@ -32,6 +32,25 @@ namespace trashure
             user.items.Add(item2);
             Navigate(Navigation.home);
         }
+        // User Functions
+        private void SignIn(User user)
+        {
+            this.user = user;
+            AuthMenu.Visibility = Visibility.Collapsed;
+            ProfileMenu.Visibility = Visibility.Visible;
+            Profile.Header = user.userName;
+            Navigate(Navigation.dashboard);
+        }
+        private void SignOut(object sender, RoutedEventArgs e)
+        {
+            this.user = null;
+            AuthMenu.Visibility = Visibility.Visible;
+            ProfileMenu.Visibility = Visibility.Collapsed;
+            Profile.Header = "";
+            Navigate(Navigation.home);
+        }
+
+        // Navigation Functions
         public enum Navigation
         {
             back,
@@ -58,10 +77,10 @@ namespace trashure
                     mainFrame.Navigate(new DashboardPage(user, Navigate, NavigateItemClick));
                     break;
                 case Navigation.signin:
-                    mainFrame.Navigate(new SignInPage(Navigate));
+                    mainFrame.Navigate(new SignInPage(Navigate, SignIn));
                     break;
                 case Navigation.signup:
-                    mainFrame.Navigate(new SignUpPage(Navigate));
+                    mainFrame.Navigate(new SignUpPage(Navigate, SignIn));
                     break;
                 case Navigation.tambahSampah:
                     mainFrame.Navigate(new TambahSampahPage());
