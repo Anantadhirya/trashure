@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using trashure.components;
 
 namespace trashure.pages
 {
@@ -21,19 +22,53 @@ namespace trashure.pages
     /// </summary>
     public partial class TambahSampahPage : Page
     {
-        public TambahSampahPage()
+        private User user;
+        private Action<MainWindow.Navigation> Navigate;
+        private string imagePath = "";
+        public TambahSampahPage(Action<MainWindow.Navigation> Navigate, User user)
         {
             InitializeComponent();
-        }
-
-        private void onTambahBarang(object sender, RoutedEventArgs e)
-        {
-
+            this.user = user;
+            this.Navigate = Navigate;
         }
 
         private void onTambahGambar(object sender, RoutedEventArgs e)
         {
-            
+            OpenFileDialog openFileDialog = new OpenFileDialog();
+            openFileDialog.Filter = "Image Files (*.png;*.jpg;*.jpeg;*.gif;*.bmp)|*.png;*.jpg;*.jpeg;*.gif;*.bmp|All files (*.*)|*.*";
+
+            if (openFileDialog.ShowDialog() == true)
+            {
+                imagePath = openFileDialog.FileName;
+                Gambar.Source = new BitmapImage(new Uri(imagePath));
+            }
+        }
+        private void displayError(string message)
+        {
+            MessageBox.Show(message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+        }
+        private async void onTambahBarang(object sender, RoutedEventArgs e)
+        {
+            if(Nama.Text == "")
+            {
+                displayError("Nama barang tidak boleh kosong");
+                return;
+            }
+            if(imagePath == "")
+            {
+                displayError("Gambar barang tidak boleh kosong");
+                return;
+            }
+            using (var db = new TrashureContext())
+            {
+                db.Users.Attach(user);
+                string imageUrl = await storage.UploadImage(imagePath);
+                var item = new Item { itemName = Nama.Text, owner = user, image = imageUrl, available = true };
+                db.Items.Add(item);
+                db.SaveChanges();
+                Navigate(MainWindow.Navigation.dashboard);
+                MessageBox.Show("Penambahan buku berhasil", "", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
         }
     }
 }
