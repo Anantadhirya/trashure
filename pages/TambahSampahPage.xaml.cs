@@ -67,7 +67,7 @@ namespace trashure.pages
                 db.Items.Add(item);
                 db.SaveChanges();
                 Navigate(MainWindow.Navigation.dashboard);
-                MessageBox.Show("Penambahan buku berhasil", "", MessageBoxButton.OK, MessageBoxImage.Information);
+                MessageBox.Show("Penambahan barang berhasil", "", MessageBoxButton.OK, MessageBoxImage.Information);
             }
         }
     }
