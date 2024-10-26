@@ -9,7 +9,7 @@ namespace trashure
     public class Item
     {
         public int itemID { get; set; }
-        public User owner { get; set; }
+        public virtual User owner { get; set; }
         public string itemName { get; set; }
         public bool available { get; set; }
         public string image {  get; set; }
