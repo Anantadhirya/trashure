@@ -7,3 +7,5 @@ obj/
 .vs/
 
 packages/
+
+appsettings.json
