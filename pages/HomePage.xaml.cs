@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Azure.Storage.Blobs.Models;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using trashure.components;
 
 namespace trashure.pages
 {
@@ -26,15 +29,11 @@ namespace trashure.pages
             InitializeComponent();
             this.NavigateItemClick = NavigateItemClick;
 
-            // Placeholder data
-            User user1 = new User { userID = 1, userName = "Ananta", password = "password1", address = "Bantul, D. I. Yogyakarta", phoneNumber = "123-456-7890" };
-            User user2 = new User { userID = 2, userName = "Rama", password = "password2", address = "Yogyakarta", phoneNumber = "987-654-3210" };
-
-            Item item1 = new Item { itemID = 1, owner = user1, itemName = "AC Rusak", available = true, image="/public/images/placeholder-1.jpg" };
-            Item item2 = new Item { itemID = 2, owner = user2, itemName = "Botol Bekas", available = true, image = "/public/images/placeholder-2.jpg" };
-            Item item3 = new Item { itemID = 3, owner = user1, itemName = "Jerigen", available = true, image = "/public/images/placeholder-3.jpg" };
-
-            ItemList.ItemsSource = new List<Item>{ item1, item2, item3 };
+            using (var db = new TrashureContext())
+            {
+                var query = from i in db.Items.Include(i => i.owner) orderby i.itemID descending select i;
+                ItemList.ItemsSource = query.Take(100).ToList();
+            }
         }
     }
 }

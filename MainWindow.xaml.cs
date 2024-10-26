@@ -118,7 +118,7 @@ namespace trashure
         {
             if(sender is Button button && button.DataContext is Item clickedItem)
             {
-                if(clickedItem.owner.userID == user.userID)
+                if(user != null && clickedItem.owner.userID == user.userID)
                 {
                     mainFrame.Navigate(new EditSampahPage(clickedItem, Navigate));
                 } else
