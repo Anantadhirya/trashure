@@ -317,11 +317,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="public\images\placeholder-1.jpg" />
-    <Resource Include="public\images\placeholder-2.jpg" />
-    <Resource Include="public\images\placeholder-3.jpg" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="public\images\signinsignupBackground.jpg" />
   </ItemGroup>
   <ItemGroup>
