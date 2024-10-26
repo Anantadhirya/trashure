@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using trashure.components;
 using trashure.pages;
 
 namespace trashure
@@ -39,6 +40,14 @@ namespace trashure
             AuthMenu.Visibility = Visibility.Collapsed;
             ProfileMenu.Visibility = Visibility.Visible;
             Profile.Header = user.userName;
+            using (var db = new TrashureContext())
+            {
+                if (user != null)
+                {
+                    db.Users.Attach(user);
+                    db.Entry(user).Collection(u => u.items).Load();
+                }
+            }
             Navigate(Navigation.dashboard);
         }
         private void SignOut(object sender, RoutedEventArgs e)
@@ -83,7 +92,7 @@ namespace trashure
                     mainFrame.Navigate(new SignUpPage(Navigate, SignIn));
                     break;
                 case Navigation.tambahSampah:
-                    mainFrame.Navigate(new TambahSampahPage());
+                    mainFrame.Navigate(new TambahSampahPage(Navigate, user));
                     break;
             }
         }
