@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,7 +15,7 @@ namespace trashure.components
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
         {
-            options.UseNpgsql("User Id=postgres.gszmytwpftrcwyqopwly;Password=ramahitam123;Server=aws-0-ap-southeast-1.pooler.supabase.com;Port=5432;Database=postgres;");
+            options.UseNpgsql(App.Configuration.GetConnectionString("DATABASE"));
         }
     }
 }
