@@ -116,6 +116,7 @@ namespace trashure.pages
                     db.Users.Attach(user);
                     db.Users.Remove(user);
 
+                    db.Entry(user).Collection(u => u.items).Load();
                     var itemsToDelete = user.items;
                     db.Items.RemoveRange(itemsToDelete);
 

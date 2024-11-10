@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using trashure.components;
 
 namespace trashure.pages
 {
@@ -38,8 +39,17 @@ namespace trashure.pages
             Dashboard.Visibility = isSignedIn ? Visibility.Visible : Visibility.Collapsed;
             Username.Text = user?.userName;
             Gambar.Source = new BitmapImage(new Uri(user?.image != null ? user?.image : "pack://application:,,,/public/images/blank_profile.jpg"));
-            BookListText.Visibility = Visibility.Collapsed;
-            BookList.ItemsSource = user?.items;
+            ItemListText.Visibility = Visibility.Collapsed;
+            user.items.Clear();
+            using (var db = new TrashureContext())
+            {
+                if (user != null)
+                {
+                    db.Users.Attach(user);
+                    db.Entry(user).Collection(u => u.items).Load();
+                }
+            }
+            ItemList.ItemsSource = user?.items;
         }
         private void NavigateSignIn(object sender, RoutedEventArgs e)
         {
