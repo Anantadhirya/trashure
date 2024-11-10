@@ -31,6 +31,7 @@ namespace trashure.pages
             Gambar.Source = item.image != null ? new BitmapImage(new Uri(item.image, UriKind.RelativeOrAbsolute)) : null;
             Owner.Text = item.owner.userName;
             GambarPemilik.Source = new BitmapImage(new Uri(item.owner != null && item.owner.image != null ? item.owner.image : "pack://application:,,,/public/images/blank_profile.jpg"));
+            updateKeterangan(item.owner.userName, item.owner.phoneNumber, item.owner.address);
             updateStatusItem();
         }
         private void updateStatusItem()
@@ -47,6 +48,13 @@ namespace trashure.pages
             }
         }
 
+        private void updateKeterangan(String nama, String kontak, String alamat)
+        {
+            NamaPemilik.Text = nama;
+            KontakPemilik.Text = kontak;
+            LokasiPemilik.Text = alamat;
+        }
+
         private void NavigateSignIn(object sender, RoutedEventArgs e)
         {
 
@@ -54,7 +62,17 @@ namespace trashure.pages
 
         private void onKontak(object sender, RoutedEventArgs e)
         {
+            TriggerUserWindow();
+        }
 
+        private void TriggerUserWindow()
+        {
+            KeteranganKontak.Visibility = Visibility.Visible;
+        }
+
+        private void CloseUserWindow(object sender, RoutedEventArgs e)
+        {
+            KeteranganKontak.Visibility = Visibility.Collapsed;
         }
 
         private void ClickEditBarang(object sender, RoutedEventArgs e)
