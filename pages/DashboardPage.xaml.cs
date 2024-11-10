@@ -40,7 +40,7 @@ namespace trashure.pages
             Username.Text = user?.userName;
             Gambar.Source = new BitmapImage(new Uri(user?.image != null ? user?.image : "pack://application:,,,/public/images/blank_profile.jpg"));
             ItemListText.Visibility = Visibility.Collapsed;
-            user.items.Clear();
+            user?.items.Clear();
             using (var db = new TrashureContext())
             {
                 if (user != null)
