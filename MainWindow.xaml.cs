@@ -121,7 +121,7 @@ namespace trashure
                     mainFrame.Navigate(new EditSampahPage(clickedItem, Navigate));
                 } else
                 {
-                    mainFrame.Navigate(new KeteranganSampahPage(clickedItem, Navigate));
+                    mainFrame.Navigate(new KeteranganSampahPage(user, clickedItem, Navigate));
                 }
             }
         }
