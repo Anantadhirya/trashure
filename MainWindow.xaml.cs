@@ -46,6 +46,20 @@ namespace trashure
             }
             Navigate(Navigation.dashboard);
         }
+
+        private void UpdateUser(User user)
+        {
+            this.user = user;
+            if(user != null)
+            {
+                SignIn(user);
+            }
+            else
+            {
+                SignOut(null, null);
+            }
+        }
+
         private void SignOut(object sender, RoutedEventArgs e)
         {
             this.user = null;
@@ -64,8 +78,6 @@ namespace trashure
             signin,
             signup,
             tambahSampah,
-            keteranganSampah,
-            editSampah,
             editProfil,
         }
         HomePage homepage;
@@ -92,6 +104,9 @@ namespace trashure
                 case Navigation.tambahSampah:
                     mainFrame.Navigate(new TambahSampahPage(Navigate, user));
                     break;
+                case Navigation.editProfil:
+                    mainFrame.Navigate(new EditProfilePage(user, Navigate, UpdateUser));
+                    break;
             }
         }
 
@@ -111,6 +126,10 @@ namespace trashure
         private void NavigateSignUp(object sender, RoutedEventArgs e)
         {
             Navigate(Navigation.signup);
+        }
+        private void NavigateEditProfile(object sender, RoutedEventArgs e)
+        {
+            Navigate(Navigation.editProfil);
         }
         private void NavigateItemClick(object sender, RoutedEventArgs e)
         {

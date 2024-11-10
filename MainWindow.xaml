@@ -96,7 +96,7 @@
             <Viewbox Name="ProfileMenu" Grid.Column="2" HorizontalAlignment="Right" Visibility="Collapsed">
                 <Menu Background="Transparent" Foreground="White" FontFamily="{StaticResource Default}">
                     <MenuItem Name="Profile" Padding="10,16" Cursor="Hand" Foreground="{StaticResource fgColor-100}">
-                        <MenuItem Header="Profile" Foreground="{StaticResource fgColor-100}" BorderThickness="0" Cursor="Hand"/>
+                        <MenuItem Header="Profile" Click="NavigateEditProfile" Foreground="{StaticResource fgColor-100}" BorderThickness="0" Cursor="Hand"/>
                         <MenuItem Header="Sign Out" Click="SignOut"  Foreground="{StaticResource fgColor-100}" BorderThickness="0" Cursor="Hand"/>
                     </MenuItem>
                 </Menu>
