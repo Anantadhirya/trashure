@@ -35,5 +35,21 @@ namespace trashure.pages
                 ItemList.ItemsSource = query.Take(100).ToList();
             }
         }
+        public void searchFilter(string searchText)
+        {
+            TextDaftarBarang.Text = string.IsNullOrEmpty(searchText) ? "Daftar Barang" : "Hasil Pencarian"; 
+            using (var db = new TrashureContext())
+            {
+                var query = from i in db.Items.Include(i => i.owner) orderby i.itemID descending select i;
+                
+                var searchWords = searchText.Split(' ').Where(i => !string.IsNullOrEmpty(i));
+                foreach (var word in searchWords)
+                {
+                    query = (IOrderedQueryable<Item>)query.Where(i => i.itemName.ToLower().Contains(word.ToLower()));
+                }
+
+                ItemList.ItemsSource = query.Take(100).ToList();
+            }
+        }
     }
 }

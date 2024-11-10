@@ -68,6 +68,7 @@ namespace trashure
             editSampah,
             editProfil,
         }
+        HomePage homepage;
         public void Navigate(Navigation target)
         {
             switch (target)
@@ -76,7 +77,8 @@ namespace trashure
                     if(mainFrame.CanGoBack) mainFrame.GoBack();
                     break;
                 case Navigation.home:
-                    mainFrame.Navigate(new HomePage(NavigateItemClick));
+                    homepage = new HomePage(NavigateItemClick);
+                    mainFrame.Navigate(homepage);
                     break;
                 case Navigation.dashboard:
                     mainFrame.Navigate(new DashboardPage(user, Navigate, NavigateItemClick));
@@ -129,6 +131,13 @@ namespace trashure
         {
             ClearButton.Visibility = string.IsNullOrEmpty(SearchText.Text) ? Visibility.Collapsed : Visibility.Visible;
         }
+        private void onSearchEnter(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                homepage.searchFilter(SearchText.Text);
+            }
+        }
 
         private void onSearchGotFocus(object sender, RoutedEventArgs e)
         {
@@ -142,6 +151,7 @@ namespace trashure
         {
             SearchText.Text = "";
             onSearchLostFocus(sender, null);
+            homepage.searchFilter(SearchText.Text);
         }
     }
 }

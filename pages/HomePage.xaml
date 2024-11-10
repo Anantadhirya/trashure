@@ -22,7 +22,7 @@
                 <RowDefinition Height="95*"/>
             </Grid.RowDefinitions>
             <Viewbox Grid.Row="0">
-                <TextBlock Text="Daftar Barang" FontFamily="{StaticResource Default}" FontWeight="Bold" Margin="0,0,500,5"/>
+                <TextBlock Name="TextDaftarBarang" Text="Daftar Barang" FontFamily="{StaticResource Default}" FontWeight="Bold" Margin="0,0,500,5"/>
             </Viewbox>
             <Viewbox Grid.Row="1" VerticalAlignment="Top">
                 <ItemsControl Name="ItemList" Width="800">

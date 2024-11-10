@@ -68,7 +68,7 @@
                         <TextBlock Name="SearchPlaceholder" Text="Cari barang Anda di sini" FontFamily="{StaticResource Default}" FontSize="11" Foreground="{StaticResource searchbarfgColor}" VerticalAlignment="Center" Padding="10,5"/>
 
                         <!-- Search TextBox -->
-                        <TextBox Name="SearchText" BorderThickness="0" FontFamily="{StaticResource Default}" Background ="Transparent" Foreground="White" FontSize="11" VerticalAlignment="Center" Padding="10,0" TextChanged ="onTextChanged" GotFocus="onSearchGotFocus" LostFocus="onSearchLostFocus"/>
+                        <TextBox Name="SearchText" BorderThickness="0" FontFamily="{StaticResource Default}" Background ="Transparent" Foreground="White" FontSize="11" VerticalAlignment="Center" Padding="10,0" TextChanged ="onTextChanged" GotFocus="onSearchGotFocus" LostFocus="onSearchLostFocus" KeyDown="onSearchEnter"/>
 
                         <!-- Clear Button -->
                         <Button Name="ClearButton" Click="onClear" Visibility="Collapsed" Width="10" Height="10" HorizontalAlignment="Right" BorderBrush="Transparent" Background="Transparent">
