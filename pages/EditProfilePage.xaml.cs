@@ -68,7 +68,7 @@ namespace trashure.pages
             {
                 using (var db = new TrashureContext())
                 {
-                    var query = from user in db.Users where user.userName == text select user;
+                    var query = from user in db.Users where user.userName == text && user.userID != this.user.userID select user;
                     if (query.Any()) errorMessage = "Username sudah digunakan.";
                 }
             }
