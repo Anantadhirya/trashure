@@ -154,6 +154,7 @@ namespace trashure
         {
             if (e.Key == Key.Enter)
             {
+                Navigate(Navigation.home);
                 homepage.searchFilter(SearchText.Text);
             }
         }
